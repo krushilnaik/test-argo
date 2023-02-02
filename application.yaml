@@ -1,7 +1,6 @@
 apiVersion: argoproj.io/v1alpha
 kind: Application
 metadata:
-  name: aline-financial
   namespace: argocd
 spec:
   project: aline

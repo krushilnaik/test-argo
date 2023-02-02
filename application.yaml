@@ -1,0 +1,19 @@
+apiVersion: argoproj.io/v1alpha
+kind: Application
+metadata:
+  name: aline-financial
+  namespace: argocd
+spec:
+  project: aline
+  source:
+    repoURL: https://github.com/krushilnaik/test-argo.git
+    path: dev
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: aline
+  syncPolicy:
+    syncOptions:
+      - CreateNamespace=true
+    automated:
+      selfHeal: true
+      prune: true
